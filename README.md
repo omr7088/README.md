@@ -1,6 +1,4 @@
-# Arch Linux Installation
-Arch Linux Installation Process Documentation
-
+ARCH Linux Installation Process Documentation
 ## Overview
 
 **Date of Documentation**: October 27, 2024  
@@ -155,35 +153,42 @@ EDITOR=vim visudo
 # Installed ZSH
 pacman -S zsh
 # Result: ZSH installed successfully
-
+```
+```
 # Set as default shell for users
 chsh -s /bin/zsh justin
 chsh -s /bin/zsh codi
-
+```
+```
 # Created ZSH configuration
 cat > /home/justin/.zshrc << 'EOL'
 # Terminal settings
 export TERM="xterm-256color"
-
+```
+```
 # Color aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
+```
+```
 # Useful aliases
 alias ll='ls -la'
 alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
 alias remove='sudo pacman -R'
 alias ..='cd ..'
-
+```
+```
 # Enable colors
 autoload -U colors && colors
 PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 EOL
-
+```
+```
 # Copied configuration to other user
 cp /home/justin/.zshrc /home/codi/.zshrc
-
+```
+```
 # Set proper ownership
 chown justin:justin /home/justin/.zshrc
 chown codi:codi /home/codi/.zshrc
@@ -194,7 +199,8 @@ chown codi:codi /home/codi/.zshrc
 # Installed SSH
 pacman -S openssh
 # Result: SSH installed successfully
-
+```
+```
 # Enabled SSH service
 systemctl enable sshd
 # Result: SSH service enabled for next boot
