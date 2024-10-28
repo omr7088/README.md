@@ -1,4 +1,4 @@
-# README.md
+# Arch Linux Installation
 Arch Linux Installation Process Documentation
 
 ## Overview
